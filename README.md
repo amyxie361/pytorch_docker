@@ -20,8 +20,9 @@ $ sudo sh get-docker.sh --mirror Aliyun
 # add user to docker group if you do not want sudo every time
 $ sudo usermod -aG docker runoob 
 $ systemctl enable docker
-$ service docker start
+
 # check if docker is installed successfully
+$ service docker start
 $ docker run hello-world 
 
 # 2. install nvidia-docker and nvidia-docker-plugin
@@ -80,8 +81,6 @@ between local file system and docker file system.
 $ docker container run -it \
     --name gpu_env \
     --runtime=nvidia -u baihe \
-    --mount type=bind,source=/data/baihe/datasets,target=/home/baihe/datasets \
-    --mount type=bind,source=/data/baihe/projects,target=/home/baihe/projects \
-    --mount type=bind,source=/data/baihe/checkpoints,target=/home/baihe/checkpoints \
+    --mount type=bind,source=/data/yqxie,target=/home/yqxie \
     --shm-size=16g richardbaihe/pytorch:gpu /bin/zsh
 ```
